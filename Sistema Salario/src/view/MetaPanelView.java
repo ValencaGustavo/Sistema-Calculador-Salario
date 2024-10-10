@@ -6,16 +6,16 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class CalculoPanelView extends JFrame {
+public class MetaPanelView extends JFrame {
     public static Scanner yourName = new Scanner(System.in);
     public static Scanner weeklyGoal = new Scanner(System.in);
     public static Scanner monthlyGoal = new Scanner(System.in);
     public static Scanner yearlyGoal = new Scanner(System.in);
 
-    private final JLabel resultJLabel = new JLabel("Resultado:", SwingConstants.CENTER);
-    private final JLabel baseSalaryJLabel = new JLabel("Salário Mínimo:", SwingConstants.CENTER);
-    private final JLabel JLabel = new JLabel("Bônus por meta semanal, alcançada:", SwingConstants.CENTER);
-    private final JLabel finalSalaryJLabel = new JLabel("Insira sua meta anual:", SwingConstants.CENTER);
+    private final JLabel nameJLabel = new JLabel("Insira seu nome:", SwingConstants.CENTER);
+    private final JLabel weeklyGoalJLabel = new JLabel("Insira sua meta semanal:", SwingConstants.CENTER);
+    private final JLabel monthlyGoalJLabel = new JLabel("Insira sua meta mensal:", SwingConstants.CENTER);
+    private final JLabel yearlyGoalJLabel = new JLabel("Insira sua meta anual:", SwingConstants.CENTER);
 
     private final JTextField nameJTextField = new JTextField("", SwingConstants.CENTER);
     private final JTextField weeklyGoalJTextField = new JTextField("", SwingConstants.CENTER);
@@ -31,7 +31,7 @@ public class CalculoPanelView extends JFrame {
 
     private final JButton calculateJButton = new JButton("Calcular");
 
-    public CalculoPanelView() {
+    public MetaPanelView() {
         super("Calculo");   
         setLayout(new GridLayout(9,3,5,5));
 
@@ -53,20 +53,32 @@ public class CalculoPanelView extends JFrame {
 
         JPanel linha9 = new JPanel(new GridLayout(1, 1, 5, 5));
 
-        linha1.add(resultJLabel);
+        linha1.add(nameJLabel);
         add(linha1);
 
-        linha2.add(espacador1);
+        linha2.add(nameJTextField);
         add(linha2);
 
-        linha3.add(baseSalaryJLabel);
+        linha3.add(weeklyGoalJLabel);
         add(linha3);
 
         linha4.add(weeklyGoalJTextField);
         add(linha4);
 
-        linha5.add(finalSalaryJLabel);
+        linha5.add(monthlyGoalJLabel);
         add(linha5);
+
+        linha6.add(monthlyGoalJTextField);
+        add(linha6);
+
+        linha7.add(yearlyGoalJLabel);
+        add(linha7);
+
+        linha8.add(yearlyGoalJTextField);
+        add(linha8);
+
+        linha9.add(calculateJButton);
+        add(linha9);
 
         setSize(600, 300);
         setVisible(true);
@@ -85,7 +97,7 @@ public class CalculoPanelView extends JFrame {
 
     public static void main(String[] args) {
         
-        CalculoPanelView application = new CalculoPanelView();
+        MetaPanelView application = new MetaPanelView();
         application.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 }
